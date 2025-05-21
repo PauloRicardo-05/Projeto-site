@@ -14,7 +14,7 @@ body{
 */
 
 #cabeçalho{
-	background-color: #f7b600;
+	background-color: #276ef3;
 	padding: 15px;
 	text-align: center;
 }
@@ -74,7 +74,7 @@ a{
 	text-decoration: none;
 }
 a:link,a:visited{
-	color: #f7b600;
+	color: #10429e;
 }
 
 a:hover{
@@ -87,7 +87,7 @@ a:hover{
 }
 
 #cabeçalho a:hover{
-	color: #f7b600;
+	color: #276ef3;
 	background: white;
 	text-decoration: none;
 }
@@ -98,17 +98,17 @@ a:hover{
 */
 
 h1{
-	color: #4e4e4e;
+	color: #093b97;
 	font-size: 2.5em;
 }
 
 h2{
-	color: #f7b600;
+	color: #276ef3;
 }
 
 h3{
-	color: #565656;
-	background: #CCC;
+	color: white;
+	background: #276ef3;
 	padding: 5px;
 }
 
