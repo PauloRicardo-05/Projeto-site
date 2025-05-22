@@ -1,126 +1,171 @@
-/*Limpar formatação padrão*/
-*{
-	margin: 0;
-	padding: 0;
+/* Limpar formatação padrão */
+* {
+    margin: 0;
+    padding: 0;
 }
 
-body{
-	font-size: 1em;
-	font-family:"Trebuchet MS", Helvetica, sans-serif ;
-	background: #e6e6e6;
-}
-/*
-*******Layout**********
-*/
-
-#cabeçalho{
-	background-color: #276ef3;
-	padding: 15px;
-	text-align: center;
+body {
+    font-size: 1em;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background: #e6e6e6;
 }
 
-#logo, #menu{
-	padding: 10px;
+/* Layout geral */
+#cabeçalho {
+    background-color: #276ef3;
+    padding: 15px;
+    text-align: center;
 }
 
-#area-principal{
-	width: 920px;
-	margin: 0 auto;
-	padding: 15px;
+#logo, #menu {
+    padding: 10px;
 }
 
-#postagens{
-	width: 660px;
-	float: left;
+#area-principal {
+    width: 920px;
+    margin: 0 auto;
+    padding: 15px;
 }
 
-.Postagem{
-	padding: 20px;
-	margin-bottom: 20px;
-	background: white;
+#postagens {
+    width: 660px;
+    float: left;
 }
 
-.conteudo-lateral{
-	background: white;
-	padding: 10px;
-	margin-bottom: 20px;
+.Postagem {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: white;
 }
 
-#lateral{
-	width: 240px;
-	float: right;
+.conteudo-lateral {
+    background: white;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
-
-
-#rodape{
-	clear: both;
-	text-align: center;
-	padding: 15px;
-	background: #CCC;
+#lateral {
+    width: 240px;
+    float: right;
 }
 
-.postagem-lateral{
-	font-size: 0.8em;
-	padding: 5px;
+#rodape {
+    clear: both;
+    text-align: center;
+    padding: 15px;
+    background: #CCC;
 }
 
-
-/*
-*****Formatação do Menu*****
-*/
-
-a{
-	text-decoration: none;
-}
-a:link,a:visited{
-	color: #10429e;
+.postagem-lateral {
+    font-size: 0.8em;
+    padding: 5px;
 }
 
-a:hover{
-	text-decoration: underline;
+/* Links do menu (inclusive o botão) padronizados */
+#menu a,
+.toggle-button {
+    color: #FFF;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0 4px;
 }
 
-#cabeçalho a:link, #cabeçalho a:visited{
-	color: #FFF;
-	padding: 8px 12px;
+#menu a:hover,
+.toggle-button:hover {
+    background-color: white;
+    color: #276ef3;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-#cabeçalho a:hover{
-	color: #276ef3;
-	background: white;
-	text-decoration: none;
+/* Tipografia */
+h1 {
+    color: #093b97;
+    font-size: 2.5em;
 }
 
-
-/*
-*****Formatações gerais*****
-*/
-
-h1{
-	color: #093b97;
-	font-size: 2.5em;
+h2 {
+    color: #276ef3;
 }
 
-h2{
-	color: #276ef3;
+h3 {
+    color: white;
+    background: #276ef3;
+    padding: 5px;
 }
 
-h3{
-	color: white;
-	background: #276ef3;
-	padding: 5px;
+.branco {
+    color: white;
 }
 
-.branco{
-	color: white;
+.data-postagem {
+    font-size: 0.8em;
+    border-bottom: solid #f4f4f4;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: block;
 }
 
-.data-postagem{
-	font-size: 	0.8em;
-	border-bottom: solid #f4f4f4;
-	padding-bottom: 10px;
-	margin-bottom: 10px;
-	display: block;
+/* Estrutura do dropdown */
+.dropdown-wrapper {
+    position: relative;
+    display: inline-block;
 }
 
+/* Dropdown que aparece abaixo do botão */
+.dropdown-area {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    background-color: rgb(219, 29, 29);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 5px;
+    min-width: 300px;
+}
+
+/* Container de blocos */
+.blocos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+/* Blocos dentro do dropdown */
+.bloco {
+    width: 150px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.bloco:hover {
+    transform: scale(1.05);
+}
+
+.bloco img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.bloco p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
