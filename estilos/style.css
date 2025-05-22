@@ -61,30 +61,26 @@ body {
     padding: 5px;
 }
 
-/* Menu */
-a {
-    text-decoration: none;
-}
-
-a:link,
-a:visited {
-    color: #10429e;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-#cabeçalho a:link,
-#cabeçalho a:visited {
+/* Links do menu (inclusive o botão) padronizados */
+#menu a,
+.toggle-button {
     color: #FFF;
     padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0 4px;
 }
 
-#cabeçalho a:hover {
+#menu a:hover,
+.toggle-button:hover {
+    background-color: white;
     color: #276ef3;
-    background: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 /* Tipografia */
@@ -115,31 +111,20 @@ h3 {
     display: block;
 }
 
-/* Botão do dropdown */
-.toggle-button {
-    padding: 12px 24px;
-    background-color: #276ef3;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Estrutura para posicionamento correto do dropdown */
+/* Estrutura do dropdown */
 .dropdown-wrapper {
     position: relative;
     display: inline-block;
 }
 
-/* Dropdown que abre para baixo */
+/* Dropdown que aparece abaixo do botão */
 .dropdown-area {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     z-index: 10;
-    background-color: rgb(253, 252, 252);
+    background-color: rgb(219, 29, 29);
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -155,7 +140,7 @@ h3 {
     justify-content: flex-start;
 }
 
-/* Cada bloco */
+/* Blocos dentro do dropdown */
 .bloco {
     width: 150px;
     background-color: #ffffff;
