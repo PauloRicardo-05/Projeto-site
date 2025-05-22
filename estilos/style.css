@@ -125,9 +125,9 @@ h3{
 }
 
 /**Formatação dropdown**/
-.toggle-button {
+.toggle-button{
     padding: 12px 24px;
-    background-color: #4A90E2;
+    background-color: #276ef3;
     color: white;
     border: none;
     border-radius: 8px;
@@ -139,7 +139,7 @@ h3{
     display: none;
     margin-top: 20px;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(219, 29, 29);
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
