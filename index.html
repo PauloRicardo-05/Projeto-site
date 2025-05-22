@@ -6,6 +6,29 @@
 	<title>DoF.home</title>
 </head>
 <body>
+<button class="toggle-button" onclick="toggleDropdown()">Ver opções</button>
+
+<div class="dropdown-area" id="dropdown">
+    <div class="blocos-container">
+    <div class="bloco">
+        <img src="https://via.placeholder.com/150x100" alt="Imagem 1">
+        <p>Opção A</p>
+    </div>
+    <div class="bloco">
+        <img src="https://via.placeholder.com/150x100" alt="Imagem 2">
+        <p>Opção B</p>
+    </div>
+    <div class="bloco">
+        <img src="https://via.placeholder.com/150x100" alt="Imagem 3">
+        <p>Opção C</p>
+    </div>
+    <div class="bloco">
+        <img src="https://via.placeholder.com/150x100" alt="Imagem 4">
+        <p>Opção D</p>
+    </div>
+    <!-- Adicione mais blocos se quiser -->
+    </div>
+</div>
 
 	<div id="cabeçalho">
 		
@@ -32,7 +55,7 @@
 			<div class="Postagem">
 				<h2>Titulo da postagem 1</h2>
 				<span class="data-postagem">postado 20 de março 2022</span>
-				<img width="620px" src="https://paulin4000.github.io/projeto-site/Imagens/Notebook.png">
+				<img width="620px" src="https://PauloRicardo-05.github.io/projeto-site/Imagens/Notebook.png">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu scelerisque ex. Sed massa tellus, dapibus sit amet efficitur eu, ornare non nisi.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu scelerisque ex. Sed massa tellus, dapibus sit amet efficitur eu, ornare non nisi.
 				</p>
@@ -44,7 +67,7 @@
 			<div class="Postagem">
 				<h2>Titulo da postagem 2</h2>
 				<span class="data-postagem">postado 10 de março 2022</span>
-				<img width="620px" src="https://paulin4000.github.io/projeto-site/Imagens/Engenheiro.png">
+				<img width="620px" src="https://PauloRicardo-05.github.io/projeto-site/Imagens/Engenheiro.png">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu scelerisque ex. Sed massa tellus, dapibus sit amet efficitur eu, ornare non nisi.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu scelerisque ex. Sed massa tellus, dapibus sit amet efficitur eu, ornare non nisi.
 				</p>
@@ -95,4 +118,12 @@
 	</div>
 
 </body>
+
+<script>
+    function toggleDropdown() {
+    const dropdown = document.getElementById("dropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+</script>
+
 </html>
