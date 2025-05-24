@@ -1,2 +1,1 @@
-# projeto-site
- projeto de um site criado durante o curso de git e github
+# Projeto de criação web para divulgação de matérias diversas
