@@ -62,7 +62,7 @@ body {
 }
 
 /* Links do menu (inclusive o botão) padronizados */
-#menu a,
+#menu > a,
 .toggle-button {
     color: #FFF;
     padding: 8px 12px;
@@ -98,7 +98,13 @@ h2 {
 h3 {
     color: white;
     background: #38B2AC;
-    padding: 5px;
+    padding: 4px;
+}
+
+h4 {
+    color: white;
+    background: #38B2AC;
+    padding: 3px;
 }
 
 .branco {
@@ -149,6 +155,8 @@ h3 {
 
 /* Cada um dos blocos com as opções */
 .bloco {
+    display: block;
+    text-decoration: none;
     width: 150px;
     background-color: #ffffff;
     border-radius: 10px;
