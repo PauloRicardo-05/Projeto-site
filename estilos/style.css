@@ -27,15 +27,11 @@ body {
     padding: 15px;
 }
 
+
+
 #postagens {
     width: 660px;
     float: left;
-}
-
-.Postagem {
-    padding: 20px;
-    margin-bottom: 20px;
-    background: FFFFFF;
 }
 
 .conteudo-lateral {
@@ -47,13 +43,6 @@ body {
 #lateral {
     width: 240px;
     float: right;
-}
-
-#rodape {
-    clear: both;
-    text-align: center;
-    padding: 15px;
-    background: #CCC;
 }
 
 .postagem-lateral {
@@ -109,14 +98,6 @@ h4 {
 
 .branco {
     color: white;
-}
-
-.data-postagem {
-    font-size: 0.8em;
-    border-bottom: solid #f4f4f4;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    display: block;
 }
 
 /* --- Estilos para o Dropdown Moderno --- */
@@ -219,3 +200,165 @@ h4 {
 .Postagem h3 {
     margin-top: 20px;
 }
+
+/* --- Estilos para os Cards de Artigos --- */
+
+/* Título da seção, como "Últimas Matérias" */
+.titulo-secao {
+    color: #2D3748; /* Cor de texto da nossa paleta */
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #38B2AC; /* Borda com a cor de acento */
+    display: inline-block; /* Faz a borda ter a largura do texto */
+}
+
+/* O container que organiza os cards */
+.cards-container {
+    display: flex; /* ATIVA O FLEXBOX */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha de baixo */
+    gap: 30px; /* Espaço entre os cards */
+}
+
+/* O card individual (que é um link <a>) */
+.card-artigo {
+    width: calc(50% - 15px); /* Cada card ocupa metade do espaço, menos metade do 'gap' */
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: inherit; /* Herda a cor do texto do pai */
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo do card em coluna (imagem em cima, texto embaixo) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Garante que nada vaze dos cantos arredondados */
+}
+
+/* Efeito de hover no card */
+.card-artigo:hover {
+    transform: translateY(-8px); /* Levanta o card */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Sombra mais forte */
+}
+
+/* A imagem do card */
+.card-imagem {
+    width: 100%;
+    height: 180px; /* Altura fixa para todas as imagens */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+/* O conteúdo de texto do card */
+.card-conteudo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz esta área crescer para ocupar o espaço disponível */
+}
+
+/* A "tag" de categoria (ex: EDUCAÇÃO) */
+.card-categoria {
+    background-color: #38B2AC; /* Cor de acento */
+    color: #FFFFFF;
+    padding: 4px 10px;
+    border-radius: 20px; /* Pílula arredondada */
+    font-size: 0.8em;
+    font-weight: 700;
+    align-self: flex-start; /* Alinha a pílula à esquerda */
+    margin-bottom: 15px;
+}
+
+/* O título do card */
+.card-titulo {
+    font-size: 1.4em;
+    color: #2D3748;
+    margin-bottom: 10px;
+}
+
+/* O pequeno resumo do card */
+.card-resumo {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #718096; /* Um cinza mais claro para o resumo */
+    flex-grow: 1; /* Faz o resumo ocupar o espaço para alinhar a data embaixo */
+    margin-bottom: 15px;
+}
+
+/* A data da postagem no card */
+.card-data {
+    font-size: 0.8em;
+    color: #A0AEC0; /* Um cinza ainda mais claro */
+    margin-top: auto; /* Empurra a data para o final do card */
+}
+
+/* --- Estilos para o Rodapé Profissional --- */
+
+#rodape {
+    margin-top: 60px;
+    background-color: #2D3748; /* Fundo cinza-escuro da nossa paleta */
+    color: #A0AEC0; /* Cor de texto cinza claro, para não cansar a vista */
+    padding: 25px; /* Espaçamento interno (em cima, lados, embaixo) */
+    clear: both; /* Garante que o rodapé fique abaixo de todo o conteúdo */
+    text-align: left; /* Alinha o texto à esquerda por padrão */
+}
+
+/* Container das colunas */
+.footer-container {
+    width: 920px; /* Mesma largura da #area-principal para alinhar */
+    margin: 0 auto; /* Centraliza o container */
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço entre as colunas */
+    gap: 20px; /* Espaço entre as colunas */
+}
+
+/* Estilo para cada coluna */
+.footer-coluna {
+    flex: 1; /* Faz com que cada coluna tente ocupar o mesmo espaço */
+}
+
+.footer-coluna h4 {
+    color: #FFFFFF; /* Títulos das colunas em branco para destaque */
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    /* Removemos o fundo colorido que h4 tinha globalmente */
+    background: none;
+    padding: 0;
+}
+
+.footer-coluna p {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+/* Estilo para os links do rodapé */
+.footer-coluna a {
+    color: #A0AEC0; /* Mesma cor do texto */
+    text-decoration: none;
+    display: block; /* Faz cada link ocupar uma linha */
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.footer-coluna a:hover {
+    color: #38B2AC; /* Links ficam com a cor de acento no hover */
+}
+
+/* Linha de Copyright */
+.footer-copyright {
+    width: 920px;
+    margin: 0 auto;
+    padding-top: 15px;
+    border-top: 1px solid #4A5568; /* Linha sutil para separar */
+    text-align: center;
+    font-size: 0.8em;
+}
+
+/* =======================================================
+   A PEÇA FINAL DO QUEBRA-CABEÇA: O "CLEARFIX"
+   Isto vai consertar o layout de vez.
+   ======================================================= */
+#area-principal::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
