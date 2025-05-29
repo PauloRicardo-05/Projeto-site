@@ -13,60 +13,54 @@
 			<h1>Debugando <span class="branco">o futuro</span></h1>
 		</div>
 		<div id="menu">
-			<a href="index.html">Inicio</a>
-			<!-- Botão com dropdown -->
+				
+				<a href="index.html">Inicio</a>
+				<!-- Botão com dropdown -->
 			<div class="dropdown-wrapper">
 				<button class="toggle-button" onclick="toggleDropdown()">Outras matérias</button>
 				<div class="dropdown-area" id="dropdown">
 					<div class="blocos-container">
-						<a href="materia1.html" class="bloco">
-							<img src="Imagens/Cooding.png" alt="Imagem 1">
-							<p>O uso da tecnologia na educação e no cotidiano</p>
-						</a>
-						<a class="bloco">
+						<div class="bloco">
+							<img src="https://via.placeholder.com/150x100" alt="Imagem 1">
+							<p>Opção A</p>
+						</div>
+						<div class="bloco">
 							<img src="https://via.placeholder.com/150x100" alt="Imagem 2">
 							<p>Opção B</p>
-						</a>
-						<a class="bloco">
+						</div>
+						<div class="bloco">
 							<img src="https://via.placeholder.com/150x100" alt="Imagem 3">
 							<p>Opção C</p>
-						</a>
-						<a class="bloco">
+						</div>
+						<div class="bloco">
 							<img src="https://via.placeholder.com/150x100" alt="Imagem 4">
 							<p>Opção D</p>
-						</a>
+						</div>
 					</div>
 				</div>
 			</div>
-			<a href="sobremim.html">Sobre mim</a>
+			<a href="sobremim.html">Sobre mim</a><br>
+
+		</div>
+
+	</div>
+
+	<div id="area-principal">
+
+		<div id="postagens">
+
+			<!--Começo da postagem1-->
+<div class="Postagem">
+    <h2>O uso da tecnologia na educação e no cotidiano</h2>
+	<span class="data-postagem">postado  de maio 2025</span>
+<img width="620px" src="Imagens/Componente.png">
+            
+</div>
+
 		</div>
 	</div>
-	<div id="area-principal">
-		<div id="postagens">
-			<!--Começo da postagem1-->
-			<div class="Postagem">
-				<h2>O uso da tecnologia na educação e no cotidiano</h2>
-				<span class="data-postagem">postado 22 de maio 2025</span>
-				<img width="620px" src="Imagens/Notebook.png">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu scelerisque ex. Sed massa tellus, dapibus sit amet efficitur eu, ornare non nisi.
-				</p>
-				<a href="">Leia mais</a>
-			</div>
 			<!--Fim da postagem1-->
-			<!--Começo da postagem2-->
-			<div class="Postagem">
-				<h2>Titulo da postagem 2</h2>
-				<span class="data-postagem">postado 10 de março 2022</span>
-				<img width="620px" src="Imagens/Engenheiro.png">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu scelerisque ex. Sed massa tellus, dapibus sit amet efficitur eu, ornare non nisi.
-				</p>
-				<a href="">Leia mais</a>
-			</div>
-			<!--Fim da postagem2-->
 		</div>
-		<!--Começo da barra lateral-->
 		<div id="lateral">
 			
 			<div class="conteudo-lateral">
@@ -88,19 +82,19 @@
 				
 			</div>
 		</div>
-		<!--Fim da barra lateral-->
-		<div id="rodape">
+
+				<div id="rodape">
 			Todos os direitos reservados
 		</div>
+
 	</div>
 
-</body>
-
-<script>
+	<script>
 	function toggleDropdown() {
 		const dropdown = document.getElementById("dropdown");
 		dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 	}
 </script>
 
+</body>
 </html>

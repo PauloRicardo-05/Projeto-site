@@ -15,8 +15,31 @@
 		<div id="menu">
 				
 				<a href="index.html">Inicio</a>
-				<a href="outrasmaterias.html">Outras matérias</a>
-				<a href="materiais.html">Materiais</a>
+				<!-- Botão com dropdown -->
+			<div class="dropdown-wrapper">
+				<button class="toggle-button" onclick="toggleDropdown()">Outras matérias</button>
+				<div class="dropdown-area" id="dropdown">
+					<div class="blocos-container">
+						<div class="bloco">
+							<img src="https://via.placeholder.com/150x100" alt="Imagem 1">
+							<p>Opção A</p>
+						</div>
+						<div class="bloco">
+							<img src="https://via.placeholder.com/150x100" alt="Imagem 2">
+							<p>Opção B</p>
+						</div>
+						<div class="bloco">
+							<img src="https://via.placeholder.com/150x100" alt="Imagem 3">
+							<p>Opção C</p>
+						</div>
+						<div class="bloco">
+							<img src="https://via.placeholder.com/150x100" alt="Imagem 4">
+							<p>Opção D</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="sobremim.html">Sobre mim</a><br>
 
 		</div>
 
@@ -27,32 +50,75 @@
 		<div id="postagens">
 
 			<!--Começo da postagem1-->
-			<div class="Postagem">
-				<h2>Titulo da postagem 1</h2>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu scelerisque ex. Sed massa tellus, dapibus sit amet efficitur eu, ornare non nisi.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu scelerisque ex. Sed massa tellus, dapibus sit amet efficitur eu, ornare non nisi.
-				</p>
-				<a href="">Leia mais</a>
-			</div>
-			<!--Fim da postagem1-->
+<div class="Postagem">
+    <h2>Quem Faz o Site</h2>
 
-			<div class="Postagem">
-                <img width="620px" src="https://PauloRicardo-05.github.io/projeto-site/Imagens/imagem1.jpg">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu scelerisque ex. Sed massa tellus, dapibus sit amet efficitur eu, ornare non nisi.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu scelerisque ex. Sed massa tellus, dapibus sit amet efficitur eu, ornare non nisi.
-				</p>
-			</div>
+    <div class="sobre-mim-container">
+
+        <div class="foto-autor">
+            <img class="foto-paulo" src="Imagens/Paulo 01.jpeg" alt="Foto de Paulo Ricardo">
+        </div>
+
+        <div class="texto-autor">
+            <h3>Mente curiosa, Coração de engenheiro</h3>
+            <p><strong>E aí? Deixa eu me apresentar!</strong></p>
+            <p>
+                Que bom ter você por aqui! Meu nome é Paulo Ricardo. Sabe aquela pessoa que não consegue parar de fuçar em coisas novas e adora não só entender, mas também questionar como a tecnologia funciona? Prazer, sou eu.
+            </p>
+            <p>
+                Atualmente, estou na jornada da Engenharia da Computação, mas minha curiosidade vai muito além da sala de aula.
+            </p>
+        </div>
+
+    </div>
+
+    <h3>Como a paixão por aprender me trouxe até aqui</h3>
+    <p>
+        Vamos ser sinceros: às vezes, a tecnologia parece um bicho de sete cabeças, né? Pior ainda é quando ela poderia estar ajudando muito mais a gente, mas não está. A ideia deste site nasceu justamente para isso: criar um espaço para a gente conversar sobre tecnologia sem complicação.
+    </p>
+    <p>
+        Aqui, o objetivo é ir além das manchetes. Vamos falar das últimas novidades de um jeito leve, mas também vamos mergulhar em algumas críticas e reflexões. Queremos entender o lado bom, o lado ruim e tudo o que está no meio.
+    </p>
+    <p>
+        Afinal, a tecnologia é para todos, e a forma de debater sobre ela também deveria ser. Sinta-se em casa, explore os artigos e espero que você se divirta aprendendo (e questionando) algo novo!
+    </p>
+</div>
+			<!--Fim da postagem1-->
 		</div>
 		<div id="lateral">
+			
+			<div class="conteudo-lateral">
+				
+				<h3>Postagens recentes</h3>
+				<div class="postagem-lateral">
+				<h4>O uso da tecnologia na educação e no cotidiano</h4>
+				<p>
+					
+				</p>
+				<a href="">Leia mais</a>
+				</div>
+			</div>
 			<div class="conteudo-lateral">
 				
 				<h3>Veja mais</h3>
 				<a href="index.html">Inicio</a><br>
-				<a href="outrasmaterias.html">Outras matérias</a><br>
 				<a href="sobremim.html">Sobre mim</a><br>
 				
 			</div>
+		</div>
+
+				<div id="rodape">
+			Todos os direitos reservados
+		</div>
+
 	</div>
+
+	<script>
+	function toggleDropdown() {
+		const dropdown = document.getElementById("dropdown");
+		dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+	}
+</script>
 
 </body>
 </html>
