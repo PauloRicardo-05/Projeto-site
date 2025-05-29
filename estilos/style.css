@@ -180,3 +180,34 @@ h3 {
     font-weight: 700; /* Deixa o texto com mais destaque */
     color: #2D3748; /* Usa a cor de texto da nossa paleta */
 }
+
+/* --- Estilos para a página Sobre Mim --- */
+
+/* Container que alinha a foto e o texto lado a lado */
+.sobre-mim-container {
+    display: flex; /* ATIVA O FLEXBOX: um modo moderno de alinhar itens */
+    align-items: center; /* Alinha verticalmente a foto e o texto no centro */
+    gap: 30px; /* Cria um espaço de 30px entre a foto e o texto */
+    margin-top: 20px; /* Adiciona um espaço acima da seção */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo da seção */
+}
+
+/* A MÁGICA DA FOTO CIRCULAR */
+.foto-paulo {
+    width: 180px; /* Largura da foto */
+    height: 180px; /* Altura da foto (igual à largura para formar um quadrado) */
+    border-radius: 50%; /* ESTA É A REGRA QUE CRIA O CÍRCULO! */
+    object-fit: cover; /* Garante que a foto preencha o círculo sem distorcer */
+    border: 4px solid #276ef3; /* Adiciona uma borda azul estilosa */
+}
+
+/* Melhora a legibilidade do texto */
+.Postagem p {
+    line-height: 1.6; /* Aumenta o espaçamento entre as linhas, tornando a leitura MUITO menos massante */
+    margin-bottom: 15px; /* Adiciona um espaço abaixo de cada parágrafo */
+}
+
+/* Adiciona espaço acima dos subtítulos para separar os blocos de texto */
+.Postagem h3 {
+    margin-top: 20px;
+}
