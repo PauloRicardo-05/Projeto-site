@@ -7,12 +7,12 @@
 body {
     font-size: 1em;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    background: #e6e6e6;
+    background: #F7FAFC;
 }
 
 /* Layout geral */
 #cabeçalho {
-    background-color: #276ef3;
+    background-color: #2B6CB0;
     padding: 15px;
     text-align: center;
 }
@@ -35,7 +35,7 @@ body {
 .Postagem {
     padding: 20px;
     margin-bottom: 20px;
-    background: white;
+    background: FFFFFF;
 }
 
 .conteudo-lateral {
@@ -85,17 +85,19 @@ body {
 
 /* Tipografia */
 h1 {
-    color: #093b97;
+    color: #2D3748;
     font-size: 2.5em;
 }
 
 h2 {
-    color: #276ef3;
+    color: white;
+    background: #38B2AC;
+    padding: 5px;
 }
 
 h3 {
     color: white;
-    background: #276ef3;
+    background: #38B2AC;
     padding: 5px;
 }
 
@@ -111,61 +113,70 @@ h3 {
     display: block;
 }
 
-/* Estrutura do dropdown */
+/* --- Estilos para o Dropdown Moderno --- */
+
+/* Caixa que envolve o botão e o dropdown */
 .dropdown-wrapper {
     position: relative;
     display: inline-block;
 }
 
-/* Dropdown que aparece abaixo do botão */
+/* A área do dropdown que aparece */
 .dropdown-area {
-    display: none;
+    display: none; /* Começa escondido */
     position: absolute;
-    top: 100%;
+    top: 100%; /* Aparece logo abaixo do botão */
     left: 0;
     z-index: 10;
-    background-color: rgb(18, 151, 212);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 10px; /* Um respiro entre o botão e o dropdown */
+    min-width: 350px; /* Largura mínima, para caber 2 blocos lado a lado */
+
+    /* O VISUAL SOFISTICADO */
+    background-color: #2D3748; /* Fundo cinza-escuro da nossa paleta */
+    border-radius: 12px; /* Cantos arredondados */
+    border: 1px solid #38B2AC; /* Borda fina no nosso verde de acento */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra mais profissional */
     padding: 20px;
-    margin-top: 5px;
-    min-width: 300px;
 }
 
-/* Container de blocos */
+/* Container que organiza os blocos */
 .blocos-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 20px; /* Espaço entre os blocos */
     justify-content: flex-start;
 }
 
-/* Blocos dentro do dropdown */
+/* Cada um dos blocos com as opções */
 .bloco {
     width: 150px;
     background-color: #ffffff;
-    border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     text-align: center;
     cursor: pointer;
-    transition: transform 0.2s;
+    overflow: hidden; /* Garante que a imagem não vaze dos cantos arredondados */
+    border: 2px solid transparent; /* Borda transparente para não "pular" no hover */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Transição suave */
 }
 
+/* EFEITO DE HOVER: O que acontece ao passar o mouse */
 .bloco:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px); /* O bloco "levanta" um pouquinho */
+    border-color: #38B2AC; /* A borda aparece com a cor de acento */
 }
 
+/* A imagem dentro do bloco */
 .bloco img {
     width: 100%;
     height: 100px;
     object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    /* Removemos os cantos arredondados daqui, pois o .bloco já tem overflow: hidden */
 }
 
+/* O texto (parágrafo) dentro do bloco */
 .bloco p {
     margin: 10px 0;
-    font-size: 14px;
-    color: #333;
+    font-size: 15px;
+    font-weight: 700; /* Deixa o texto com mais destaque */
+    color: #2D3748; /* Usa a cor de texto da nossa paleta */
 }
