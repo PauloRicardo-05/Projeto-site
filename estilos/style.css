@@ -1,3 +1,80 @@
+/* Adicione no TOPO do seu style.css */
+:root {
+    --cor-fundo-principal: #F7FAFC;
+    --cor-texto-principal: #2D3748;
+    --cor-fundo-cards-postagens: #FFFFFF; /* Para .Postagem, .card-artigo, .conteudo-lateral */
+    --cor-azul-primario: #2B6CB0;
+    --cor-verde-acento: #38B2AC;
+    --cor-branco-puro: #FFFFFF;
+    --cor-texto-secundario: #A0AEC0; /* Para datas, texto do rodapé */
+    --cor-borda-sutil: #E2E8F0; /* Para bordas leves, se necessário */
+    --cor-fundo-dropdown: #2D3748;
+    --cor-borda-dropdown: #38B2AC;
+    --cor-texto-titulos-h3-h4: #FFFFFF; /* Texto dos h3 e h4 que têm fundo colorido */
+}
+
+/* Cores para o Modo Escuro */
+body.dark-mode {
+    --cor-fundo-principal: #1A202C;       /* Um cinza bem escuro, quase preto */
+    --cor-texto-principal: #EDF2F7;      /* Um cinza quase branco */
+    --cor-fundo-cards-postagens: #2D3748; /* Um cinza escuro, um pouco mais claro que o fundo */
+    --cor-azul-primario: #63B3ED;          /* Um azul mais claro e vibrante para o primário no escuro */
+    --cor-verde-acento: #4FD1C5;          /* Um verde-água um pouco mais vibrante para acento no escuro */
+    --cor-branco-puro: #EDF2F7;          /* O "branco" no modo escuro será um cinza claro */
+    --cor-texto-secundario: #A0AEC0;      /* Pode manter ou clarear um pouco, este está bom */
+    --cor-borda-sutil: #4A5568;         /* Uma borda cinza escura */
+    --cor-fundo-dropdown: #1A202C;        /* Fundo do dropdown mais escuro */
+    --cor-borda-dropdown: #63B3ED;        /* Borda do dropdown com o novo azul de acento */
+    --cor-texto-titulos-h3-h4: #1A202C;   /* Texto dos h3 e h4 precisa contrastar com o novo fundo do título */
+}
+
+/* Ajustes específicos para elementos no dark mode */
+body.dark-mode h1 { /* Logo no dark mode */
+    color: var(--cor-branco-puro); /* O texto "Debugando" */
+}
+body.dark-mode #logo .branco { /* O texto "o futuro" */
+    color: var(--cor-verde-acento); /* Destacado com o verde do dark mode */
+}
+
+body.dark-mode h2,
+body.dark-mode .Postagem h2, /* Título h2 dentro da página de postagem */
+body.dark-mode .titulo-secao { /* Titulo "Últimas Matérias" */
+    background: var(--cor-verde-acento); 
+    color: var(--cor-texto-titulos-h3-h4); 
+    border-bottom-color: var(--cor-azul-primario); /* Para .titulo-secao */
+}
+
+body.dark-mode h3,
+body.dark-mode .Postagem h3 { /* h3 dentro de .Postagem e .sobre-mim */
+    background: var(--cor-azul-primario); /* Usar o novo azul primário do dark mode */
+    color: var(--cor-texto-titulos-h3-h4);
+}
+
+body.dark-mode h4 { /* h4 dentro de .postagem-lateral */
+    background: var(--cor-azul-primario);
+    color: var(--cor-texto-titulos-h3-h4);
+}
+
+body.dark-mode .card-categoria {
+    background-color: var(--cor-azul-primario);
+    color: var(--cor-texto-titulos-h3-h4);
+}
+
+body.dark-mode #menu > a,
+body.dark-mode .toggle-button {
+    color: var(--cor-branco-puro); /* Branco do dark mode */
+}
+
+body.dark-mode #menu a:hover,
+body.dark-mode .toggle-button:hover {
+    background-color: var(--cor-branco-puro);
+    color: var(--cor-azul-primario); /* Azul do dark mode */
+}
+
+body.dark-mode .foto-paulo {
+    border-color: var(--cor-azul-primario); /* Borda da foto com azul do dark mode */
+}
+
 /* Limpar formatação padrão */
 * {
     margin: 0;
@@ -7,12 +84,12 @@
 body {
     font-size: 1em;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    background: #F7FAFC;
+    background: var(--cor-fundo-principal);
 }
 
 /* Layout geral */
 #cabeçalho {
-    background-color: #2B6CB0;
+    background-color: var(--cor-azul-primario);
     padding: 15px;
     text-align: center;
 }
@@ -27,15 +104,13 @@ body {
     padding: 15px;
 }
 
-
-
 #postagens {
     width: 660px;
     float: left;
 }
 
 .conteudo-lateral {
-    background: white;
+    background: var(--cor-fundo-cards-postagens);
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -53,7 +128,7 @@ body {
 /* Links do menu (inclusive o botão) padronizados */
 #menu > a,
 .toggle-button {
-    color: #FFF;
+    color: var(--cor-branco-puro);
     padding: 8px 12px;
     border-radius: 4px;
     border: none;
@@ -66,260 +141,242 @@ body {
 
 #menu a:hover,
 .toggle-button:hover {
-    background-color: white;
-    color: #276ef3;
+    background-color: var(--cor-branco-puro);
+    color: var(--cor-azul-primario); /* Cor #276ef3 original mapeada para o azul primário da paleta */
     text-decoration: none;
     cursor: pointer;
 }
 
 /* Tipografia */
 h1 {
-    color: #2D3748;
+    color: var(--cor-texto-principal);
     font-size: 2.5em;
 }
 
-h2 {
-    color: white;
-    background: #38B2AC;
+h2 { /* Este é o h2 dos títulos de postagem antigos e o .titulo-secao */
+    color: var(--cor-branco-puro); /* Para o texto do h2 que tem fundo */
+    background: var(--cor-verde-acento);
     padding: 5px;
 }
 
-h3 {
-    color: white;
-    background: #38B2AC;
+h3 { /* Estilo global para h3, geralmente com fundo */
+    color: var(--cor-texto-titulos-h3-h4);
+    background: var(--cor-verde-acento);
     padding: 4px;
 }
 
-h4 {
-    color: white;
-    background: #38B2AC;
+h4 { /* Estilo global para h4, geralmente com fundo */
+    color: var(--cor-texto-titulos-h3-h4);
+    background: var(--cor-verde-acento);
     padding: 3px;
 }
 
-.branco {
-    color: white;
+.branco { /* Usado no logo */
+    color: var(--cor-branco-puro);
 }
 
 /* --- Estilos para o Dropdown Moderno --- */
 
-/* Caixa que envolve o botão e o dropdown */
 .dropdown-wrapper {
     position: relative;
     display: inline-block;
 }
 
-/* A área do dropdown que aparece */
 .dropdown-area {
-    display: none; /* Começa escondido */
+    display: none;
     position: absolute;
-    top: 100%; /* Aparece logo abaixo do botão */
+    top: 100%;
     left: 0;
     z-index: 10;
-    margin-top: 10px; /* Um respiro entre o botão e o dropdown */
-    min-width: 350px; /* Largura mínima, para caber 2 blocos lado a lado */
-
-    /* O VISUAL SOFISTICADO */
-    background-color: #2D3748; /* Fundo cinza-escuro da nossa paleta */
-    border-radius: 12px; /* Cantos arredondados */
-    border: 1px solid #38B2AC; /* Borda fina no nosso verde de acento */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra mais profissional */
+    margin-top: 10px;
+    min-width: 350px;
+    background-color: var(--cor-fundo-dropdown);
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda-dropdown);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     padding: 20px;
 }
 
-/* Container que organiza os blocos */
 .blocos-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Espaço entre os blocos */
+    gap: 20px;
     justify-content: flex-start;
 }
 
-/* Cada um dos blocos com as opções */
 .bloco {
     display: block;
     text-decoration: none;
     width: 150px;
-    background-color: #ffffff;
+    background-color: var(--cor-fundo-cards-postagens); /* Era #ffffff */
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-    overflow: hidden; /* Garante que a imagem não vaze dos cantos arredondados */
-    border: 2px solid transparent; /* Borda transparente para não "pular" no hover */
-    transition: transform 0.3s ease, border-color 0.3s ease; /* Transição suave */
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* EFEITO DE HOVER: O que acontece ao passar o mouse */
 .bloco:hover {
-    transform: translateY(-5px); /* O bloco "levanta" um pouquinho */
-    border-color: #38B2AC; /* A borda aparece com a cor de acento */
+    transform: translateY(-5px);
+    border-color: var(--cor-verde-acento); /* Era #38B2AC */
 }
 
-/* A imagem dentro do bloco */
 .bloco img {
     width: 100%;
     height: 100px;
     object-fit: cover;
-    /* Removemos os cantos arredondados daqui, pois o .bloco já tem overflow: hidden */
 }
 
-/* O texto (parágrafo) dentro do bloco */
 .bloco p {
     margin: 10px 0;
     font-size: 15px;
-    font-weight: 700; /* Deixa o texto com mais destaque */
-    color: #2D3748; /* Usa a cor de texto da nossa paleta */
+    font-weight: 700;
+    color: var(--cor-texto-principal); /* Era #2D3748 */
 }
 
 /* --- Estilos para a página Sobre Mim --- */
 
-/* Container que alinha a foto e o texto lado a lado */
 .sobre-mim-container {
-    display: flex; /* ATIVA O FLEXBOX: um modo moderno de alinhar itens */
-    align-items: center; /* Alinha verticalmente a foto e o texto no centro */
-    gap: 30px; /* Cria um espaço de 30px entre a foto e o texto */
-    margin-top: 20px; /* Adiciona um espaço acima da seção */
-    margin-bottom: 20px; /* Adiciona um espaço abaixo da seção */
-}
-
-/* A MÁGICA DA FOTO CIRCULAR */
-.foto-paulo {
-    width: 180px; /* Largura da foto */
-    height: 180px; /* Altura da foto (igual à largura para formar um quadrado) */
-    border-radius: 50%; /* ESTA É A REGRA QUE CRIA O CÍRCULO! */
-    object-fit: cover; /* Garante que a foto preencha o círculo sem distorcer */
-    border: 4px solid #276ef3; /* Adiciona uma borda azul estilosa */
-}
-
-/* Melhora a legibilidade do texto */
-.Postagem p {
-    line-height: 1.6; /* Aumenta o espaçamento entre as linhas, tornando a leitura MUITO menos massante */
-    margin-bottom: 15px; /* Adiciona um espaço abaixo de cada parágrafo */
-}
-
-/* Adiciona espaço acima dos subtítulos para separar os blocos de texto */
-.Postagem h3 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
     margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.foto-paulo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--cor-azul-primario); /* Cor #276ef3 original mapeada para o azul primário */
+}
+
+/* Estilos para .Postagem (usado na página interna do artigo) */
+.Postagem { /* Fundo de .Postagem, se usado na página individual do artigo */
+    padding: 20px;
+    margin-bottom: 20px;
+    background: var(--cor-fundo-cards-postagens); /* Era FFFFFF (sem #), que na verdade é branco */
+}
+
+.Postagem p { /* Parágrafos dentro de .Postagem (página do artigo) */
+    line-height: 1.6;
+    margin-bottom: 15px;
+    /* A cor do texto aqui será herdada do body (var(--cor-texto-principal)) ou pode ser definida especificamente */
+}
+
+.Postagem h3 { /* h3 dentro da página de um artigo, se houver */
+    margin-top: 20px;
+    /* Já herda o estilo global de h3 com fundo var(--cor-verde-acento) e texto var(--cor-texto-titulos-h3-h4) */
 }
 
 /* --- Estilos para os Cards de Artigos --- */
 
-/* Título da seção, como "Últimas Matérias" */
-.titulo-secao {
-    color: #2D3748; /* Cor de texto da nossa paleta */
+.titulo-secao { /* Ex: "Últimas Matérias" */
+    color: var(--cor-texto-principal);
     margin-bottom: 25px;
     padding-bottom: 10px;
-    border-bottom: 3px solid #38B2AC; /* Borda com a cor de acento */
-    display: inline-block; /* Faz a borda ter a largura do texto */
+    border-bottom: 3px solid var(--cor-verde-acento);
+    display: inline-block;
 }
 
-/* O container que organiza os cards */
 .cards-container {
-    display: flex; /* ATIVA O FLEXBOX */
-    flex-wrap: wrap; /* Permite que os cards quebrem para a linha de baixo */
-    gap: 30px; /* Espaço entre os cards */
-}
-
-/* O card individual (que é um link <a>) */
-.card-artigo {
-    width: calc(50% - 15px); /* Cada card ocupa metade do espaço, menos metade do 'gap' */
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
-    text-decoration: none; /* Remove o sublinhado do link */
-    color: inherit; /* Herda a cor do texto do pai */
     display: flex;
-    flex-direction: column; /* Organiza o conteúdo do card em coluna (imagem em cima, texto embaixo) */
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card-artigo {
+    width: calc(50% - 15px);
+    background-color: var(--cor-fundo-cards-postagens); /* Era #FFFFFF */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Garante que nada vaze dos cantos arredondados */
+    overflow: hidden;
 }
 
-/* Efeito de hover no card */
 .card-artigo:hover {
-    transform: translateY(-8px); /* Levanta o card */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Sombra mais forte */
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* A imagem do card */
 .card-imagem {
     width: 100%;
-    height: 180px; /* Altura fixa para todas as imagens */
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    height: 180px;
+    object-fit: cover;
 }
 
-/* O conteúdo de texto do card */
 .card-conteudo {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Faz esta área crescer para ocupar o espaço disponível */
+    flex-grow: 1;
 }
 
-/* A "tag" de categoria (ex: EDUCAÇÃO) */
 .card-categoria {
-    background-color: #38B2AC; /* Cor de acento */
-    color: #FFFFFF;
+    background-color: var(--cor-verde-acento); /* Era #38B2AC */
+    color: var(--cor-branco-puro);          /* Era #FFFFFF */
     padding: 4px 10px;
-    border-radius: 20px; /* Pílula arredondada */
+    border-radius: 20px;
     font-size: 0.8em;
     font-weight: 700;
-    align-self: flex-start; /* Alinha a pílula à esquerda */
+    align-self: flex-start;
     margin-bottom: 15px;
 }
 
-/* O título do card */
-.card-titulo {
+.card-titulo { /* Título do card na home */
     font-size: 1.4em;
-    color: #2D3748;
+    color: var(--cor-texto-principal); /* Era #2D3748 */
     margin-bottom: 10px;
 }
 
-/* O pequeno resumo do card */
 .card-resumo {
     font-size: 1em;
     line-height: 1.5;
-    color: #718096; /* Um cinza mais claro para o resumo */
-    flex-grow: 1; /* Faz o resumo ocupar o espaço para alinhar a data embaixo */
+    color: var(--cor-texto-secundario); /* Era #718096, mapeado para a variável de texto secundário */
+    flex-grow: 1;
     margin-bottom: 15px;
 }
 
-/* A data da postagem no card */
 .card-data {
     font-size: 0.8em;
-    color: #A0AEC0; /* Um cinza ainda mais claro */
-    margin-top: auto; /* Empurra a data para o final do card */
+    color: var(--cor-texto-secundario); /* Era #A0AEC0 */
+    margin-top: auto;
 }
 
 /* --- Estilos para o Rodapé Profissional --- */
 
 #rodape {
     margin-top: 60px;
-    background-color: #2D3748; /* Fundo cinza-escuro da nossa paleta */
-    color: #A0AEC0; /* Cor de texto cinza claro, para não cansar a vista */
-    padding: 25px; /* Espaçamento interno (em cima, lados, embaixo) */
-    clear: both; /* Garante que o rodapé fique abaixo de todo o conteúdo */
-    text-align: left; /* Alinha o texto à esquerda por padrão */
+    background-color: var(--cor-fundo-dropdown); /* Era #2D3748, que é a cor de fundo do dropdown */
+    color: var(--cor-texto-secundario);      /* Era #A0AEC0 */
+    padding: 25px;
+    clear: both;
+    text-align: left;
 }
 
-/* Container das colunas */
 .footer-container {
-    width: 920px; /* Mesma largura da #area-principal para alinhar */
-    margin: 0 auto; /* Centraliza o container */
+    width: 920px;
+    margin: 0 auto;
     padding-bottom: 15px;
     display: flex;
-    justify-content: space-between; /* Distribui o espaço entre as colunas */
-    gap: 20px; /* Espaço entre as colunas */
+    justify-content: space-between;
+    gap: 20px;
 }
 
-/* Estilo para cada coluna */
 .footer-coluna {
-    flex: 1; /* Faz com que cada coluna tente ocupar o mesmo espaço */
+    flex: 1;
 }
 
 .footer-coluna h4 {
-    color: #FFFFFF; /* Títulos das colunas em branco para destaque */
+    color: var(--cor-branco-puro); /* Era #FFFFFF */
     font-size: 1.2em;
     margin-bottom: 15px;
-    /* Removemos o fundo colorido que h4 tinha globalmente */
     background: none;
     padding: 0;
 }
@@ -327,34 +384,33 @@ h4 {
 .footer-coluna p {
     font-size: 0.9em;
     line-height: 1.6;
+    /* Cor do texto herdada de #rodape (var(--cor-texto-secundario)) */
 }
 
-/* Estilo para os links do rodapé */
 .footer-coluna a {
-    color: #A0AEC0; /* Mesma cor do texto */
+    color: var(--cor-texto-secundario); /* Era #A0AEC0 */
     text-decoration: none;
-    display: block; /* Faz cada link ocupar uma linha */
+    display: block;
     margin-bottom: 8px;
     transition: color 0.3s ease;
 }
 
 .footer-coluna a:hover {
-    color: #38B2AC; /* Links ficam com a cor de acento no hover */
+    color: var(--cor-verde-acento); /* Era #38B2AC */
 }
 
-/* Linha de Copyright */
 .footer-copyright {
     width: 920px;
     margin: 0 auto;
     padding-top: 15px;
-    border-top: 1px solid #4A5568; /* Linha sutil para separar */
+    border-top: 1px solid var(--cor-borda-sutil); /* Era #4A5568, mapeado para borda sutil (será redefinida no dark mode) */
     text-align: center;
     font-size: 0.8em;
 }
 
 /* =======================================================
-   A PEÇA FINAL DO QUEBRA-CABEÇA: O "CLEARFIX"
-   Isto vai consertar o layout de vez.
+A PEÇA FINAL DO QUEBRA-CABEÇA: O "CLEARFIX"
+Isto vai consertar o layout de vez.
    ======================================================= */
 #area-principal::after {
     content: "";
@@ -362,3 +418,39 @@ h4 {
     clear: both;
 }
 
+/* --- Estilo para o Botão Flutuante de Modo Escuro --- */
+#floating-dark-mode-btn {
+    position: fixed; 
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000; 
+
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%; 
+    
+    background-color: var(--cor-fundo-dropdown); 
+    color: var(--cor-verde-acento);          
+    border: 2px solid var(--cor-verde-acento);
+    
+    font-size: 1.5em; 
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#floating-dark-mode-btn:hover {
+    transform: scale(1.1); 
+}
+
+/* Adaptação do botão flutuante para o modo escuro */
+body.dark-mode #floating-dark-mode-btn {
+    background-color: var(--cor-fundo-cards-postagens); 
+    color: var(--cor-azul-primario); 
+    border-color: var(--cor-azul-primario);
+}

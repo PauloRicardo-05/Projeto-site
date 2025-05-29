@@ -121,13 +121,46 @@
     </div>
 </footer>
 
-</body>
+ </footer> <button id="floating-dark-mode-btn" title="Alternar tema">
+        <span class="modo-icon">🌙</span> </button>
 
-<script>
-	function toggleDropdown() {
-		const dropdown = document.getElementById("dropdown");
-		dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-	}
-</script>
+    <script>
+        // Script do Dropdown
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+
+        // SCRIPT PARA O MODO ESCURO COM O BOTÃO FLUTUANTE
+        const toggleDarkModeBtn = document.getElementById('floating-dark-mode-btn'); 
+        const modoIconSpan = toggleDarkModeBtn.querySelector('.modo-icon'); 
+        const corpo = document.body;
+
+        function atualizarAparenciaBotaoModoEscuro() {
+            if (corpo.classList.contains('dark-mode')) {
+                if(modoIconSpan) modoIconSpan.textContent = '☀️'; // Ícone de Sol
+                localStorage.setItem('darkModePreferido', 'ativado');
+            } else {
+                if(modoIconSpan) modoIconSpan.textContent = '🌙'; // Ícone de Lua
+                localStorage.setItem('darkModePreferido', 'desativado');
+            }
+        }
+
+        toggleDarkModeBtn.addEventListener('click', function() {
+            corpo.classList.toggle('dark-mode');
+            atualizarAparenciaBotaoModoEscuro(); 
+        });
+
+        // Verificar se o usuário já tinha preferência salva ao carregar a página
+        if (localStorage.getItem('darkModePreferido') === 'ativado') {
+            corpo.classList.add('dark-mode');
+        }
+        // Sempre atualiza a aparência do botão ao carregar, baseado no estado atual
+        // Verifica se o botão existe antes de tentar atualizar (caso alguma página não o tenha)
+        if (toggleDarkModeBtn && modoIconSpan) {
+            atualizarAparenciaBotaoModoEscuro(); 
+        }
+    </script>
+</body>
 
 </html>
