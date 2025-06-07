@@ -18,12 +18,12 @@ body.dark-mode {
     --cor-fundo-principal: #1A202C;       /* Um cinza bem escuro, quase preto */
     --cor-texto-principal: #EDF2F7;      /* Um cinza quase branco */
     --cor-fundo-cards-postagens: #2D3748; /* Um cinza escuro, um pouco mais claro que o fundo */
-    --cor-azul-primario: #63B3ED;          /* Um azul mais claro e vibrante para o primário no escuro */
+        /* Um azul mais claro e vibrante para o primário no escuro */
     --cor-verde-acento: #4FD1C5;          /* Um verde-água um pouco mais vibrante para acento no escuro */
     --cor-branco-puro: #EDF2F7;          /* O "branco" no modo escuro será um cinza claro */
     --cor-texto-secundario: #A0AEC0;      /* Pode manter ou clarear um pouco, este está bom */
     --cor-borda-sutil: #4A5568;         /* Uma borda cinza escura */
-    --cor-fundo-dropdown: #1A202C;        /* Fundo do dropdown mais escuro */
+    --cor-fundo-dropdown: #45474d;        /* Fundo do dropdown mais escuro */
     --cor-borda-dropdown: #63B3ED;        /* Borda do dropdown com o novo azul de acento */
     --cor-texto-titulos-h3-h4: #1A202C;   /* Texto dos h3 e h4 precisa contrastar com o novo fundo do título */
 }
@@ -33,15 +33,15 @@ body.dark-mode h1 { /* Logo no dark mode */
     color: var(--cor-branco-puro); /* O texto "Debugando" */
 }
 body.dark-mode #logo .branco { /* O texto "o futuro" */
-    color: var(--cor-verde-acento); /* Destacado com o verde do dark mode */
+    color: var(--cor-fundo-cards-postagens); /* Destacado com o verde do dark mode */
 }
 
 body.dark-mode h2,
 body.dark-mode .Postagem h2, /* Título h2 dentro da página de postagem */
 body.dark-mode .titulo-secao { /* Titulo "Últimas Matérias" */
-    background: var(--cor-verde-acento); 
+    background: var(--cor-azul-primario); 
     color: var(--cor-texto-titulos-h3-h4); 
-    border-bottom-color: var(--cor-azul-primario); /* Para .titulo-secao */
+    border-bottom-color: transparent; /* Para .titulo-secao */
 }
 
 body.dark-mode h3,
@@ -453,4 +453,96 @@ body.dark-mode #floating-dark-mode-btn {
     background-color: var(--cor-fundo-cards-postagens); 
     color: var(--cor-azul-primario); 
     border-color: var(--cor-azul-primario);
+}
+
+/* Adicione esta nova regra ao final do seu style.css */
+body.dark-mode .footer-coluna a:hover {
+    color: var(--cor-branco-puro); /* Muda para branco fosco no hover, removendo o verde */
+}
+
+/* =============================================================
+CORREÇÃO FINAL E ESPECÍFICA PARA O HOVER DO BLOCO NO MODO ESCURO
+   ============================================================= */
+body.dark-mode #menu .bloco:hover {
+    background-color: #4A5568; /* O cinza médio que queríamos desde o início */
+}
+
+/* =======================================================
+   ESTILOS PARA A BARRA LATERAL (SIDEBAR)
+   ======================================================= */
+
+/* Estilo para a lista de navegação (ex: "Veja mais") */
+.menu-lateral {
+    list-style: none; /* Remove as bolinhas da lista */
+    padding: 0;
+    margin-top: 10px;
+}
+
+.menu-lateral li a {
+    color: var(--cor-texto-principal);
+    text-decoration: none; /* Remove o sublinhado */
+    display: block; /* Faz o link ocupar a linha inteira, tornando toda a área clicável */
+    padding: 12px 15px; /* Espaçamento interno para criar botões maiores */
+    border-bottom: 1px solid var(--cor-borda-sutil); /* Linha sutil para separar os itens */
+    transition: all 0.2s ease-in-out; /* Transição suave para o hover */
+}
+
+/* Efeito ao passar o mouse nos links da lista */
+.menu-lateral li a:hover {
+    background-color: var(--cor-fundo-principal); /* Fundo cinza claro no hover */
+    color: var(--cor-verde-acento); /* Texto fica com a cor de acento */
+    padding-left: 20px; /* Efeito de "empurrar" o texto para a direita */
+}
+
+
+/* Estilo para a seção "Postagens Recentes" */
+.postagem-lateral {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--cor-borda-sutil); /* Separador entre os posts recentes */
+}
+
+.postagem-lateral:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.postagem-lateral h4 {
+    background: none; /* Remove o fundo colorido do h4, apenas na barra lateral */
+    color: var(--cor-texto-principal);
+    padding: 0;
+    font-size: 1em;
+}
+
+/* Estilo para o botão "Leia mais" na barra lateral */
+.postagem-lateral a {
+    display: inline-block; /* Comportamento de botão */
+    text-decoration: none;
+    background-color: var(--cor-azul-primario);
+    color: var(--cor-branco-puro);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.postagem-lateral a:hover {
+    background-color: var(--cor-verde-acento); /* Muda para a cor de acento no hover */
+}
+
+/* Adaptação dos links da lateral para o MODO ESCURO */
+body.dark-mode .menu-lateral li a {
+    color: var(--cor-texto-principal); /* O texto já fica claro por causa das variáveis */
+    border-bottom-color: var(--cor-borda-sutil); /* A borda fica mais escura */
+}
+
+body.dark-mode .menu-lateral li a:hover {
+    background-color: #4A5568; /* Cinza médio para o hover no modo escuro */
+}
+
+body.dark-mode .postagem-lateral h4 {
+    color: var(--cor-texto-principal);
 }
