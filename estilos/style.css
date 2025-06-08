@@ -81,6 +81,13 @@ body.dark-mode .foto-paulo {
     padding: 0;
 }
 
+/* Adicione logo no começo do seu CSS */
+img {
+    max-width: 100%; /* A imagem nunca será mais larga que seu container */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Evita espaços estranhos abaixo da imagem */
+}
+
 body {
     font-size: 1em;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -545,4 +552,115 @@ body.dark-mode .menu-lateral li a:hover {
 
 body.dark-mode .postagem-lateral h4 {
     color: var(--cor-texto-principal);
+}
+
+/* =======================================================
+CORREÇÃO: Deixa o texto do "Sobre Mim" branco no modo escuro
+   ======================================================= */
+body.dark-mode .Postagem p {
+    color: var(--cor-branco-puro);
+}
+
+.data-postagem {
+    font-size: 0.8em;
+    border-bottom: 1px solid var(--cor-borda-sutil); /* Usando nossa variável de borda */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--cor-texto-secundario); /* <<< LINHA ADICIONADA */
+}
+
+/* =======================================================
+ESTILOS RESPONSIVOS (PARA CELULARES E TELAS MENORES)
+   ======================================================= */
+@media (max-width: 768px) {
+    /* 1. Ajustando o Layout Principal */
+    #area-principal {
+        width: 100%; /* Ocupa a largura toda da tela */
+        padding: 10px;
+        box-sizing: border-box; /* Garante que o padding não "estoure" a largura */
+    #logo {
+        /* No celular, é bom que o logo não seja tão grande */
+        font-size: 1.5em; 
+    }
+
+    #menu {
+        /* Transforma o menu em um container flex vertical */
+        display: flex;
+        flex-direction: column; /* <<< A MÁGICA ACONTECE AQUI */
+        align-items: center; /* Centraliza os itens que foram empilhados */
+        gap: 15px; /* Cria um espaço vertical entre os itens do menu */
+        margin-top: 15px; /* Adiciona um espaço entre o logo e o menu */
+    }
+
+    #menu > a,
+    #menu .dropdown-wrapper {
+        margin: 0; /* Remove as margens laterais que eles tinham na versão desktop */
+    }
+
+    /* Ajuste para o dropdown não ficar gigante na tela do celular */
+    .dropdown-area {
+        /* Força a largura a se adaptar à tela, com um limite */
+        width: 90vw; /* 90% da largura da tela do dispositivo (viewport width) */
+        min-width: 0; /* Remove a largura mínima que tínhamos antes */
+        left: 50%; /* Centraliza o dropdown */
+        transform: translateX(-50%); /* Ajuste fino para a centralização */
+    }
+
+    .blocos-container {
+        justify-content: center; /* Centraliza os blocos dentro do dropdown */
+    }
+
+    }
+
+    #postagens,
+    #lateral {
+        width: 100%; /* Colunas agora ocupam 100% da largura */
+        float: none; /* DESLIGAMOS O FLOAT! Isso faz elas se empilharem */
+    }
+
+    #lateral {
+        margin-top: 30px; /* Adiciona um espaço entre a área de posts e a sidebar quando empilhadas */
+    }
+
+
+    /* 2. Ajustando os Cards de Artigos */
+    .card-artigo {
+        width: 100%; /* Cada card agora ocupa a largura total */
+    }
+
+    
+    /* 3. Ajustando o Rodapé */
+    .footer-container {
+        flex-direction: column; /* Faz as colunas do rodapé se empilharem */
+        text-align: center; /* Centraliza o conteúdo das colunas empilhadas */
+    }
+
+    .footer-coluna {
+        margin-bottom: 20px; /* Espaço entre as colunas do rodapé quando empilhadas */
+    }
+
+    .footer-container,
+    .footer-copyright {
+        width: 100%; /* Ocupa a largura toda */
+        box-sizing: border-box;
+    }
+
+    .sobre-mim-container {
+        flex-direction: column; /* Faz a foto e o texto se empilharem */
+        text-align: center; /* Centraliza o texto quando empilhado */
+    }
+
+    .foto-paulo {
+        margin-bottom: 20px; /* Adiciona um espaço abaixo da foto quando empilhada */
+    }
+
+
+    /* CORREÇÃO 3: Dropdown */
+    .bloco {
+        /* Tornamos os blocos flexíveis em vez de ter largura fixa */
+        flex-grow: 1; /* Permite que o bloco cresça */
+        flex-basis: 120px; /* Define um tamanho base antes de crescer */
+        max-width: 150px; /* Garante que não fiquem grandes demais se houver espaço */
+    }
 }
