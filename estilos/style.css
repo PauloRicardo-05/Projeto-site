@@ -253,12 +253,30 @@ h4 { /* Estilo global para h4, geralmente com fundo */
 }
 
 .foto-paulo {
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    max-width: 180px;
+    height: auto;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--cor-azul-primario); /* Cor #276ef3 original mapeada para o azul primário */
+    border: 4px solid var(--cor-azul-primario);
 }
+
+/* Tamanho maior no desktop */
+@media (min-width: 768px) {
+    .foto-paulo {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+
 
 /* Estilos para .Postagem (usado na página interna do artigo) */
 .Postagem { /* Fundo de .Postagem, se usado na página individual do artigo */
@@ -663,4 +681,70 @@ ESTILOS RESPONSIVOS (PARA CELULARES E TELAS MENORES)
         flex-basis: 120px; /* Define um tamanho base antes de crescer */
         max-width: 150px; /* Garante que não fiquem grandes demais se houver espaço */
     }
+
+    @media (max-width: 768px) {
+  #menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #menu > a {
+    flex: 1 1 100%; /* Cada item ocupa a largura total (uma linha por item) */
+    text-align: center;
+  }
+}
+
+
+.dropdown-wrapper {
+    position: relative;
+}
+
+.dropdown-area {
+    position: absolute;
+    top: 100%;
+    right: 0;
+background-color: var(--cor-fundo-dropdown);
+    z-index: 1000;
+    max-width: 90vw;
+    min-width: 250px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.blocos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.bloco {
+    flex: 1 1 120px;
+    min-width: 120px;
+    max-width: 160px;
+}
+
+@media (max-width: 500px) {
+    .dropdown-area {
+        left: 0;
+        right: auto;
+        max-width: 95vw;
+    }
+
+    .blocos-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .bloco {
+        max-width: 100%;
+    }
+}
+
+
+
 }
