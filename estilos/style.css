@@ -1,100 +1,61 @@
-/* Adicione no TOPO do seu style.css */
+/* =======================================================
+   VARIÁVEIS DE COR (TEMA PRINCIPAL)
+   ======================================================= */
 :root {
     --cor-fundo-principal: #F7FAFC;
     --cor-texto-principal: #2D3748;
-    --cor-fundo-cards-postagens: #FFFFFF; /* Para .Postagem, .card-artigo, .conteudo-lateral */
+    --cor-fundo-cards-postagens: #FFFFFF;
     --cor-azul-primario: #2B6CB0;
     --cor-verde-acento: #38B2AC;
     --cor-branco-puro: #FFFFFF;
-    --cor-texto-secundario: #A0AEC0; /* Para datas, texto do rodapé */
-    --cor-borda-sutil: #E2E8F0; /* Para bordas leves, se necessário */
+    --cor-texto-secundario: #A0AEC0;
+    --cor-borda-sutil: #E2E8F0;
     --cor-fundo-dropdown: #2D3748;
     --cor-borda-dropdown: #38B2AC;
-    --cor-texto-titulos-h3-h4: #FFFFFF; /* Texto dos h3 e h4 que têm fundo colorido */
+    --cor-texto-titulos-h3-h4: #FFFFFF;
 }
 
-/* Cores para o Modo Escuro */
+/* =======================================================
+   VARIÁVEIS DE COR (MODO ESCURO)
+   ======================================================= */
 body.dark-mode {
-    --cor-fundo-principal: #1A202C;       /* Um cinza bem escuro, quase preto */
-    --cor-texto-principal: #EDF2F7;      /* Um cinza quase branco */
-    --cor-fundo-cards-postagens: #2D3748; /* Um cinza escuro, um pouco mais claro que o fundo */
-        /* Um azul mais claro e vibrante para o primário no escuro */
-    --cor-verde-acento: #4FD1C5;          /* Um verde-água um pouco mais vibrante para acento no escuro */
-    --cor-branco-puro: #EDF2F7;          /* O "branco" no modo escuro será um cinza claro */
-    --cor-texto-secundario: #A0AEC0;      /* Pode manter ou clarear um pouco, este está bom */
-    --cor-borda-sutil: #4A5568;         /* Uma borda cinza escura */
-    --cor-fundo-dropdown: #45474d;        /* Fundo do dropdown mais escuro */
-    --cor-borda-dropdown: #63B3ED;        /* Borda do dropdown com o novo azul de acento */
-    --cor-texto-titulos-h3-h4: #1A202C;   /* Texto dos h3 e h4 precisa contrastar com o novo fundo do título */
+    --cor-fundo-principal: #1A202C;
+    --cor-texto-principal: #EDF2F7;
+    --cor-fundo-cards-postagens: #2D3748;
+    --cor-azul-primario: #63B3ED;
+    --cor-verde-acento: #4FD1C5;
+    --cor-branco-puro: #EDF2F7;
+    --cor-texto-secundario: #A0AEC0;
+    --cor-borda-sutil: #4A5568;
+    --cor-fundo-dropdown: #1A202C;
+    --cor-borda-dropdown: #63B3ED;
+    --cor-texto-titulos-h3-h4: #1A202C;
 }
 
-/* Ajustes específicos para elementos no dark mode */
-body.dark-mode h1 { /* Logo no dark mode */
-    color: var(--cor-branco-puro); /* O texto "Debugando" */
-}
-body.dark-mode #logo .branco { /* O texto "o futuro" */
-    color: var(--cor-fundo-cards-postagens); /* Destacado com o verde do dark mode */
-}
-
-body.dark-mode h2,
-body.dark-mode .Postagem h2, /* Título h2 dentro da página de postagem */
-body.dark-mode .titulo-secao { /* Titulo "Últimas Matérias" */
-    background: var(--cor-azul-primario); 
-    color: var(--cor-texto-titulos-h3-h4); 
-    border-bottom-color: transparent; /* Para .titulo-secao */
-}
-
-body.dark-mode h3,
-body.dark-mode .Postagem h3 { /* h3 dentro de .Postagem e .sobre-mim */
-    background: var(--cor-azul-primario); /* Usar o novo azul primário do dark mode */
-    color: var(--cor-texto-titulos-h3-h4);
-}
-
-body.dark-mode h4 { /* h4 dentro de .postagem-lateral */
-    background: var(--cor-azul-primario);
-    color: var(--cor-texto-titulos-h3-h4);
-}
-
-body.dark-mode .card-categoria {
-    background-color: var(--cor-azul-primario);
-    color: var(--cor-texto-titulos-h3-h4);
-}
-
-body.dark-mode #menu > a,
-body.dark-mode .toggle-button {
-    color: var(--cor-branco-puro); /* Branco do dark mode */
-}
-
-body.dark-mode #menu a:hover,
-body.dark-mode .toggle-button:hover {
-    background-color: var(--cor-branco-puro);
-    color: var(--cor-azul-primario); /* Azul do dark mode */
-}
-
-body.dark-mode .foto-paulo {
-    border-color: var(--cor-azul-primario); /* Borda da foto com azul do dark mode */
-}
-
-/* Limpar formatação padrão */
+/* =======================================================
+   ESTILOS GERAIS E RESET
+   ======================================================= */
 * {
     margin: 0;
     padding: 0;
 }
 
-/* Adicione logo no começo do seu CSS */
 img {
-    max-width: 100%; /* A imagem nunca será mais larga que seu container */
-    height: auto; /* Mantém a proporção da imagem */
-    display: block; /* Evita espaços estranhos abaixo da imagem */
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 body {
     font-size: 1em;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     background: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal); /* Define a cor de texto padrão para o site */
 }
 
-/* Layout geral */
+/* =======================================================
+   LAYOUT PRINCIPAL (CABEÇALHO, CONTEÚDO, ETC.)
+   ======================================================= */
 #cabeçalho {
     background-color: var(--cor-azul-primario);
     padding: 15px;
@@ -116,23 +77,59 @@ body {
     float: left;
 }
 
-.conteudo-lateral {
-    background: var(--cor-fundo-cards-postagens);
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
 #lateral {
     width: 240px;
     float: right;
 }
 
-.postagem-lateral {
-    font-size: 0.8em;
+#rodape {
+    margin-top: 60px;
+    background-color: var(--cor-fundo-dropdown);
+    color: var(--cor-texto-secundario);
+    padding: 25px;
+    clear: both;
+    text-align: left;
+}
+
+/* A PEÇA FINAL DO QUEBRA-CABEÇA: O "CLEARFIX" */
+#area-principal::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* =======================================================
+   COMPONENTES E TIPOGRAFIA
+   ======================================================= */
+h1 {
+    color: var(--cor-texto-principal);
+    font-size: 2.5em;
+}
+
+h2 {
+    color: var(--cor-branco-puro);
+    background: var(--cor-verde-acento);
     padding: 5px;
 }
 
-/* Links do menu (inclusive o botão) padronizados */
+h3 {
+    color: var(--cor-texto-titulos-h3-h4);
+    background: var(--cor-verde-acento);
+    padding: 4px;
+}
+
+h4 {
+    color: var(--cor-texto-titulos-h3-h4);
+    background: var(--cor-verde-acento);
+    padding: 3px;
+}
+
+.branco { /* Usado no logo */
+    color: var(--cor-branco-puro);
+}
+
+/* -- MENU E DROPDOWN -- */
 #menu > a,
 .toggle-button {
     color: var(--cor-branco-puro);
@@ -149,40 +146,10 @@ body {
 #menu a:hover,
 .toggle-button:hover {
     background-color: var(--cor-branco-puro);
-    color: var(--cor-azul-primario); /* Cor #276ef3 original mapeada para o azul primário da paleta */
+    color: var(--cor-azul-primario);
     text-decoration: none;
     cursor: pointer;
 }
-
-/* Tipografia */
-h1 {
-    color: var(--cor-texto-principal);
-    font-size: 2.5em;
-}
-
-h2 { /* Este é o h2 dos títulos de postagem antigos e o .titulo-secao */
-    color: var(--cor-branco-puro); /* Para o texto do h2 que tem fundo */
-    background: var(--cor-verde-acento);
-    padding: 5px;
-}
-
-h3 { /* Estilo global para h3, geralmente com fundo */
-    color: var(--cor-texto-titulos-h3-h4);
-    background: var(--cor-verde-acento);
-    padding: 4px;
-}
-
-h4 { /* Estilo global para h4, geralmente com fundo */
-    color: var(--cor-texto-titulos-h3-h4);
-    background: var(--cor-verde-acento);
-    padding: 3px;
-}
-
-.branco { /* Usado no logo */
-    color: var(--cor-branco-puro);
-}
-
-/* --- Estilos para o Dropdown Moderno --- */
 
 .dropdown-wrapper {
     position: relative;
@@ -215,7 +182,7 @@ h4 { /* Estilo global para h4, geralmente com fundo */
     display: block;
     text-decoration: none;
     width: 150px;
-    background-color: var(--cor-fundo-cards-postagens); /* Era #ffffff */
+    background-color: var(--cor-fundo-cards-postagens);
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
@@ -226,7 +193,7 @@ h4 { /* Estilo global para h4, geralmente com fundo */
 
 .bloco:hover {
     transform: translateY(-5px);
-    border-color: var(--cor-verde-acento); /* Era #38B2AC */
+    border-color: var(--cor-verde-acento);
 }
 
 .bloco img {
@@ -239,11 +206,10 @@ h4 { /* Estilo global para h4, geralmente com fundo */
     margin: 10px 0;
     font-size: 15px;
     font-weight: 700;
-    color: var(--cor-texto-principal); /* Era #2D3748 */
+    color: var(--cor-texto-principal);
 }
 
-/* --- Estilos para a página Sobre Mim --- */
-
+/* -- PÁGINA SOBRE MIM -- */
 .sobre-mim-container {
     display: flex;
     align-items: center;
@@ -252,35 +218,49 @@ h4 { /* Estilo global para h4, geralmente com fundo */
     margin-bottom: 20px;
 }
 
-.foto-paulo {
+.foto-autor {
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--cor-azul-primario); /* Cor #276ef3 original mapeada para o azul primário */
+    border: 4px solid var(--cor-azul-primario);
+    overflow: hidden; /* Corta a imagem para caber no círculo */
+    flex-shrink: 0; /* Impede que o flexbox achate a foto */
 }
 
-/* Estilos para .Postagem (usado na página interna do artigo) */
-.Postagem { /* Fundo de .Postagem, se usado na página individual do artigo */
+/* 2. A imagem preenche 100% do seu pai (o círculo) */
+.foto-paulo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Essencial para não distorcer */
+}
+
+/* -- PÁGINA INTERNA DE POSTAGEM -- */
+.Postagem {
     padding: 20px;
     margin-bottom: 20px;
-    background: var(--cor-fundo-cards-postagens); /* Era FFFFFF (sem #), que na verdade é branco */
+    background: var(--cor-fundo-cards-postagens);
 }
 
-.Postagem p { /* Parágrafos dentro de .Postagem (página do artigo) */
+.Postagem p {
     line-height: 1.6;
     margin-bottom: 15px;
-    /* A cor do texto aqui será herdada do body (var(--cor-texto-principal)) ou pode ser definida especificamente */
 }
 
-.Postagem h3 { /* h3 dentro da página de um artigo, se houver */
+.Postagem h3 {
     margin-top: 20px;
-    /* Já herda o estilo global de h3 com fundo var(--cor-verde-acento) e texto var(--cor-texto-titulos-h3-h4) */
 }
 
-/* --- Estilos para os Cards de Artigos --- */
+.data-postagem {
+    font-size: 0.8em;
+    border-bottom: 1px solid var(--cor-borda-sutil);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--cor-texto-secundario);
+}
 
-.titulo-secao { /* Ex: "Últimas Matérias" */
+/* -- CARDS DE ARTIGOS (HOME) -- */
+.titulo-secao {
     color: var(--cor-texto-principal);
     margin-bottom: 25px;
     padding-bottom: 10px;
@@ -296,7 +276,7 @@ h4 { /* Estilo global para h4, geralmente com fundo */
 
 .card-artigo {
     width: calc(50% - 15px);
-    background-color: var(--cor-fundo-cards-postagens); /* Era #FFFFFF */
+    background-color: var(--cor-fundo-cards-postagens);
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     text-decoration: none;
@@ -326,8 +306,8 @@ h4 { /* Estilo global para h4, geralmente com fundo */
 }
 
 .card-categoria {
-    background-color: var(--cor-verde-acento); /* Era #38B2AC */
-    color: var(--cor-branco-puro);          /* Era #FFFFFF */
+    background-color: var(--cor-verde-acento);
+    color: var(--cor-branco-puro);
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 0.8em;
@@ -336,37 +316,27 @@ h4 { /* Estilo global para h4, geralmente com fundo */
     margin-bottom: 15px;
 }
 
-.card-titulo { /* Título do card na home */
+.card-titulo {
     font-size: 1.4em;
-    color: var(--cor-texto-principal); /* Era #2D3748 */
+    color: var(--cor-texto-principal);
     margin-bottom: 10px;
 }
 
 .card-resumo {
     font-size: 1em;
     line-height: 1.5;
-    color: var(--cor-texto-secundario); /* Era #718096, mapeado para a variável de texto secundário */
+    color: var(--cor-texto-secundario);
     flex-grow: 1;
     margin-bottom: 15px;
 }
 
 .card-data {
     font-size: 0.8em;
-    color: var(--cor-texto-secundario); /* Era #A0AEC0 */
+    color: var(--cor-texto-secundario);
     margin-top: auto;
 }
 
-/* --- Estilos para o Rodapé Profissional --- */
-
-#rodape {
-    margin-top: 60px;
-    background-color: var(--cor-fundo-dropdown); /* Era #2D3748, que é a cor de fundo do dropdown */
-    color: var(--cor-texto-secundario);      /* Era #A0AEC0 */
-    padding: 25px;
-    clear: both;
-    text-align: left;
-}
-
+/* -- RODAPÉ -- */
 .footer-container {
     width: 920px;
     margin: 0 auto;
@@ -381,7 +351,7 @@ h4 { /* Estilo global para h4, geralmente com fundo */
 }
 
 .footer-coluna h4 {
-    color: var(--cor-branco-puro); /* Era #FFFFFF */
+    color: var(--cor-branco-puro);
     font-size: 1.2em;
     margin-bottom: 15px;
     background: none;
@@ -391,11 +361,10 @@ h4 { /* Estilo global para h4, geralmente com fundo */
 .footer-coluna p {
     font-size: 0.9em;
     line-height: 1.6;
-    /* Cor do texto herdada de #rodape (var(--cor-texto-secundario)) */
 }
 
 .footer-coluna a {
-    color: var(--cor-texto-secundario); /* Era #A0AEC0 */
+    color: var(--cor-texto-secundario);
     text-decoration: none;
     display: block;
     margin-bottom: 8px;
@@ -403,50 +372,35 @@ h4 { /* Estilo global para h4, geralmente com fundo */
 }
 
 .footer-coluna a:hover {
-    color: var(--cor-verde-acento); /* Era #38B2AC */
+    color: var(--cor-verde-acento);
 }
 
 .footer-copyright {
     width: 920px;
     margin: 0 auto;
     padding-top: 15px;
-    border-top: 1px solid var(--cor-borda-sutil); /* Era #4A5568, mapeado para borda sutil (será redefinida no dark mode) */
+    border-top: 1px solid var(--cor-borda-sutil);
     text-align: center;
     font-size: 0.8em;
 }
 
-/* =======================================================
-A PEÇA FINAL DO QUEBRA-CABEÇA: O "CLEARFIX"
-Isto vai consertar o layout de vez.
-   ======================================================= */
-#area-principal::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* --- Estilo para o Botão Flutuante de Modo Escuro --- */
+/* -- BOTÃO MODO ESCURO -- */
 #floating-dark-mode-btn {
     position: fixed; 
     bottom: 25px;
     right: 25px;
     z-index: 1000; 
-
     width: 50px; 
     height: 50px;
     border-radius: 50%; 
-    
     background-color: var(--cor-fundo-dropdown); 
     color: var(--cor-verde-acento);          
     border: 2px solid var(--cor-verde-acento);
-    
     font-size: 1.5em; 
     cursor: pointer;
-    
     display: flex;
     align-items: center;
     justify-content: center;
-    
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transition: transform 0.2s ease, background-color 0.3s, color 0.3s, border-color 0.3s;
 }
@@ -455,232 +409,120 @@ Isto vai consertar o layout de vez.
     transform: scale(1.1); 
 }
 
-/* Adaptação do botão flutuante para o modo escuro */
+/* =======================================================
+   ESTILOS ESPECÍFICOS PARA O MODO ESCURO
+   ======================================================= */
 body.dark-mode #floating-dark-mode-btn {
     background-color: var(--cor-fundo-cards-postagens); 
     color: var(--cor-azul-primario); 
     border-color: var(--cor-azul-primario);
 }
 
-/* Adicione esta nova regra ao final do seu style.css */
 body.dark-mode .footer-coluna a:hover {
-    color: var(--cor-branco-puro); /* Muda para branco fosco no hover, removendo o verde */
-}
-
-/* =============================================================
-CORREÇÃO FINAL E ESPECÍFICA PARA O HOVER DO BLOCO NO MODO ESCURO
-   ============================================================= */
-body.dark-mode #menu .bloco:hover {
-    background-color: #4A5568; /* O cinza médio que queríamos desde o início */
-}
-
-/* =======================================================
-   ESTILOS PARA A BARRA LATERAL (SIDEBAR)
-   ======================================================= */
-
-/* Estilo para a lista de navegação (ex: "Veja mais") */
-.menu-lateral {
-    list-style: none; /* Remove as bolinhas da lista */
-    padding: 0;
-    margin-top: 10px;
-}
-
-.menu-lateral li a {
-    color: var(--cor-texto-principal);
-    text-decoration: none; /* Remove o sublinhado */
-    display: block; /* Faz o link ocupar a linha inteira, tornando toda a área clicável */
-    padding: 12px 15px; /* Espaçamento interno para criar botões maiores */
-    border-bottom: 1px solid var(--cor-borda-sutil); /* Linha sutil para separar os itens */
-    transition: all 0.2s ease-in-out; /* Transição suave para o hover */
-}
-
-/* Efeito ao passar o mouse nos links da lista */
-.menu-lateral li a:hover {
-    background-color: var(--cor-fundo-principal); /* Fundo cinza claro no hover */
-    color: var(--cor-verde-acento); /* Texto fica com a cor de acento */
-    padding-left: 20px; /* Efeito de "empurrar" o texto para a direita */
-}
-
-
-/* Estilo para a seção "Postagens Recentes" */
-.postagem-lateral {
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid var(--cor-borda-sutil); /* Separador entre os posts recentes */
-}
-
-.postagem-lateral:last-child {
-    border-bottom: none; /* Remove a borda do último item */
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.postagem-lateral h4 {
-    background: none; /* Remove o fundo colorido do h4, apenas na barra lateral */
-    color: var(--cor-texto-principal);
-    padding: 0;
-    font-size: 1em;
-}
-
-/* Estilo para o botão "Leia mais" na barra lateral */
-.postagem-lateral a {
-    display: inline-block; /* Comportamento de botão */
-    text-decoration: none;
-    background-color: var(--cor-azul-primario);
     color: var(--cor-branco-puro);
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: background-color 0.2s ease;
 }
 
-.postagem-lateral a:hover {
-    background-color: var(--cor-verde-acento); /* Muda para a cor de acento no hover */
+body.dark-mode #menu .bloco:hover {
+    background-color: #4A5568;
 }
 
-/* Adaptação dos links da lateral para o MODO ESCURO */
-body.dark-mode .menu-lateral li a {
-    color: var(--cor-texto-principal); /* O texto já fica claro por causa das variáveis */
-    border-bottom-color: var(--cor-borda-sutil); /* A borda fica mais escura */
-}
-
-body.dark-mode .menu-lateral li a:hover {
-    background-color: #4A5568; /* Cinza médio para o hover no modo escuro */
-}
-
-body.dark-mode .postagem-lateral h4 {
-    color: var(--cor-texto-principal);
-}
-
-/* =======================================================
-CORREÇÃO: Deixa o texto do "Sobre Mim" branco no modo escuro
-   ======================================================= */
 body.dark-mode .Postagem p {
     color: var(--cor-branco-puro);
 }
 
-.data-postagem {
-    font-size: 0.8em;
-    border-bottom: 1px solid var(--cor-borda-sutil); /* Usando nossa variável de borda */
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    display: block;
-    color: var(--cor-texto-secundario); /* <<< LINHA ADICIONADA */
-}
 
 /* =======================================================
-ESTILOS RESPONSIVOS (PARA CELULARES E TELAS MENORES)
+   ESTILOS RESPONSIVOS (PARA CELULARES E TELAS MENORES)
    ======================================================= */
 @media (max-width: 768px) {
 
-/* =======================================================
-    NOVA CORREÇÃO: Impede a quebra de linha nos botões do menu
-       ======================================================= */
-    #menu > a,
-    #menu .toggle-button {
-        white-space: nowrap; /* Impede que o texto quebre em duas linhas */
-    }
-
-    /* 1. Ajustando o Layout Principal */
+    /* -- LAYOUT GERAL -- */
     #area-principal {
-        width: 100%; /* Ocupa a largura toda da tela */
+        width: 100%;
         padding: 10px;
-        box-sizing: border-box; /* Garante que o padding não "estoure" a largura */
-    #logo {
-        /* No celular, é bom que o logo não seja tão grande */
-        font-size: 1.5em; 
-    }
-
-    #menu {
-        /* Transforma o menu em um container flex vertical */
-        display: flex;
-        flex-direction: column; /* <<< A MÁGICA ACONTECE AQUI */
-        align-items: center; /* Centraliza os itens que foram empilhados */
-        gap: 15px; /* Cria um espaço vertical entre os itens do menu */
-        margin-top: 15px; /* Adiciona um espaço entre o logo e o menu */
-    }
-
-    #menu > a,
-    #menu .dropdown-wrapper {
-        margin: 0; /* Remove as margens laterais que eles tinham na versão desktop */
-    }
-
-    /* Dentro da sua media query, coloque esta nova regra */
+        box-sizing: border-box;
     }
 
     #postagens,
     #lateral {
-        width: 100%; /* Colunas agora ocupam 100% da largura */
-        float: none; /* DESLIGAMOS O FLOAT! Isso faz elas se empilharem */
+        width: 100%;
+        float: none;
     }
 
     #lateral {
-        margin-top: 30px; /* Adiciona um espaço entre a área de posts e a sidebar quando empilhadas */
+        margin-top: 30px;
     }
 
-
-    /* 2. Ajustando os Cards de Artigos */
-    .card-artigo {
-        width: 100%; /* Cada card agora ocupa a largura total */
+    /* -- CABEÇALHO E MENU -- */
+    #logo h1 { /* Reduz o tamanho do H1 dentro do Logo */
+        font-size: 1.8em; 
     }
 
+    #menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    #menu > a,
+    #menu .dropdown-wrapper {
+        margin: 0;
+    }
+
+    #menu > a,
+    #menu .toggle-button {
+        white-space: nowrap; /* Impede que o texto quebre */
+    }
+
+    /* -- DROPDOWN -- */
+    .dropdown-area {
+        transform: none;
+        min-width: 0;
+        position: absolute;
+        width: auto;
+        left: 15px;
+        right: 15px;
+        box-sizing: border-box;
+    }
+
+    .blocos-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .bloco {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 120px;
+        max-width: 150px;
+    }
     
-    /* 3. Ajustando o Rodapé */
+    /* -- CARDS -- */
+    .card-artigo {
+        width: 100%;
+    }
+
+    /* -- RODAPÉ -- */
     .footer-container {
-        flex-direction: column; /* Faz as colunas do rodapé se empilharem */
-        text-align: center; /* Centraliza o conteúdo das colunas empilhadas */
+        flex-direction: column;
+        text-align: center;
     }
 
     .footer-coluna {
-        margin-bottom: 20px; /* Espaço entre as colunas do rodapé quando empilhadas */
+        margin-bottom: 20px;
     }
 
     .footer-container,
     .footer-copyright {
-        width: 100%; /* Ocupa a largura toda */
+        width: 100%;
         box-sizing: border-box;
     }
 
+    /* -- PÁGINA SOBRE MIM -- */
     .sobre-mim-container {
-        flex-direction: column; /* Faz a foto e o texto se empilharem */
-        text-align: center; /* Centraliza o texto quando empilhado */
-    }
-
-    .foto-paulo {
-        margin-bottom: 20px; /* Adiciona um espaço abaixo da foto quando empilhada */
-    }
-
-
-/* ================================================
-       CORREÇÃO DEFINITIVA PARA O DROPDOWN RESPONSIVO
-       ================================================ */
-
-    .dropdown-area {
-        /* Remove qualquer lógica de posicionamento antiga */
-        transform: none;
-        min-width: 0;
-
-        /* Nova lógica que "prende" o dropdown na tela */
-        position: absolute;
-        width: auto;
-        left: 15px; /* Define uma distância de 15px da borda esquerda */
-        right: 15px;/* Define uma distância de 15px da borda direita */
-        box-sizing: border-box; /* Garante que o padding não "estoure" a largura */
-    }
-
-    .blocos-container {
-        /* Garante que o container flex não tente ser maior que o dropdown */
-        width: 100%;
-        justify-content: center; /* Centraliza os blocos caso sobre espaço */
-    }
-
-    .bloco {
-        /* Faz com que os blocos possam encolher e crescer conforme o espaço */
-        flex-grow: 1;
-        flex-shrink: 1; /* Permite que o bloco encolha se não houver espaço */
-        flex-basis: 120px; /* Define um tamanho base */
-        max-width: 150px; /* Mas não deixa passar de 150px */
+        flex-direction: column;
+        text-align: center;
     }
 }
