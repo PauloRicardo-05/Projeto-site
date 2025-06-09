@@ -574,6 +574,15 @@ body.dark-mode .Postagem p {
 ESTILOS RESPONSIVOS (PARA CELULARES E TELAS MENORES)
    ======================================================= */
 @media (max-width: 768px) {
+
+/* =======================================================
+    NOVA CORREÇÃO: Impede a quebra de linha nos botões do menu
+       ======================================================= */
+    #menu > a,
+    #menu .toggle-button {
+        white-space: nowrap; /* Impede que o texto quebre em duas linhas */
+    }
+
     /* 1. Ajustando o Layout Principal */
     #area-principal {
         width: 100%; /* Ocupa a largura toda da tela */
@@ -598,19 +607,7 @@ ESTILOS RESPONSIVOS (PARA CELULARES E TELAS MENORES)
         margin: 0; /* Remove as margens laterais que eles tinham na versão desktop */
     }
 
-    /* Ajuste para o dropdown não ficar gigante na tela do celular */
-    .dropdown-area {
-        /* Força a largura a se adaptar à tela, com um limite */
-        width: 90vw; /* 90% da largura da tela do dispositivo (viewport width) */
-        min-width: 0; /* Remove a largura mínima que tínhamos antes */
-        left: 50%; /* Centraliza o dropdown */
-        transform: translateX(-50%); /* Ajuste fino para a centralização */
-    }
-
-    .blocos-container {
-        justify-content: center; /* Centraliza os blocos dentro do dropdown */
-    }
-
+    /* Dentro da sua media query, coloque esta nova regra */
     }
 
     #postagens,
@@ -656,11 +653,34 @@ ESTILOS RESPONSIVOS (PARA CELULARES E TELAS MENORES)
     }
 
 
-    /* CORREÇÃO 3: Dropdown */
+/* ================================================
+       CORREÇÃO DEFINITIVA PARA O DROPDOWN RESPONSIVO
+       ================================================ */
+
+    .dropdown-area {
+        /* Remove qualquer lógica de posicionamento antiga */
+        transform: none;
+        min-width: 0;
+
+        /* Nova lógica que "prende" o dropdown na tela */
+        position: absolute;
+        width: auto;
+        left: 15px; /* Define uma distância de 15px da borda esquerda */
+        right: 15px;/* Define uma distância de 15px da borda direita */
+        box-sizing: border-box; /* Garante que o padding não "estoure" a largura */
+    }
+
+    .blocos-container {
+        /* Garante que o container flex não tente ser maior que o dropdown */
+        width: 100%;
+        justify-content: center; /* Centraliza os blocos caso sobre espaço */
+    }
+
     .bloco {
-        /* Tornamos os blocos flexíveis em vez de ter largura fixa */
-        flex-grow: 1; /* Permite que o bloco cresça */
-        flex-basis: 120px; /* Define um tamanho base antes de crescer */
-        max-width: 150px; /* Garante que não fiquem grandes demais se houver espaço */
+        /* Faz com que os blocos possam encolher e crescer conforme o espaço */
+        flex-grow: 1;
+        flex-shrink: 1; /* Permite que o bloco encolha se não houver espaço */
+        flex-basis: 120px; /* Define um tamanho base */
+        max-width: 150px; /* Mas não deixa passar de 150px */
     }
 }
