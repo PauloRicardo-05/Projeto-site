@@ -589,6 +589,68 @@ body.dark-mode .Postagem p {
 }
 
 /* =======================================================
+   MELHORIAS DE LEITURA PARA A PÁGINA DA MATÉRIA (materia1.html)
+   Pode adicionar este bloco no final do seu CSS, antes dos @media.
+   ======================================================= */
+
+/* --- 1. Melhora a legibilidade do corpo do texto --- */
+/* Este seletor específico vai ajustar apenas os parágrafos da matéria */
+.Postagem p {
+    font-size: 1.1em; /* Um pouco maior que o padrão para conforto (aprox. 17-18px) */
+    line-height: 1.7; /* Aumentando um pouco o seu 1.6 para mais "respiro" entre as linhas */
+    color: var(--cor-texto-principal); /* Garante a cor correta no modo claro */
+    margin-bottom: 20px; /* Um espaço um pouco maior abaixo de cada parágrafo */
+}
+
+/* --- 2. Estilo limpo para os subtítulos DENTRO da matéria --- */
+.Postagem h3 {
+    /* PASSO A: Resetamos o fundo verde que o h3 global possui */
+    background: none; 
+    padding: 0; /* Removemos o padding que vinha com o fundo */
+
+    /* PASSO B: Criamos o novo estilo de subtítulo para o texto */
+    font-size: 1.8em; 
+    color: var(--cor-azul-primario); /* Usando a sua variável de azul primário */
+    margin-top: 45px;    /* Espaço ACIMA do subtítulo, para separar bem os tópicos */
+    margin-bottom: 25px; /* Espaço ABAIXO do subtítulo */
+    border-left: 4px solid var(--cor-verde-acento); /* Usando seu verde para um detalhe lateral */
+    padding-left: 15px; /* Espaço entre a linha e o texto do subtítulo */
+}
+
+/* --- 3. Estilo para as listas, que antes não tinham --- */
+.Postagem ul {
+    margin-left: 25px;   /* Adiciona indentação padrão para a lista */
+    margin-bottom: 20px;
+    list-style-type: disc; /* Garante que as bolinhas apareçam */
+}
+
+.Postagem li {
+    padding-bottom: 10px;
+    line-height: 1.6;
+    color: var(--cor-texto-principal); /* Garante a cor correta no modo claro */
+}
+
+/* --- 4. Ajustes finos para imagens e Modo Escuro --- */
+
+/* Garante que as imagens dentro da matéria tenham um espaço */
+.Postagem figure {
+    margin: 40px 0; /* Aumenta o espaço acima e abaixo das imagens */
+    text-align: center;
+}
+.Postagem figure img {
+    border-radius: 8px; /* Adiciona cantos arredondados para as imagens */
+}
+
+/* Garante que o texto da lista também fique claro no modo escuro,
+   juntando com a regra que você já tinha para os parágrafos. */
+body.dark-mode .Postagem p,
+body.dark-mode .Postagem li {
+    color: var(--cor-texto-principal); /* Usando a variável de texto principal do dark mode (cinza claro) */
+}
+
+/* O subtítulo h3 já usará as variáveis de cor certas do dark mode, então ele se ajusta sozinho! */
+
+/* =======================================================
 ESTILOS RESPONSIVOS (PARA CELULARES E TELAS MENORES)
    ======================================================= */
 @media (max-width: 768px) {
