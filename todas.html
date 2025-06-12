@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilos/style.css">
+    <title>Todas as Matérias - Debugando o Futuro</title>
+</head>
+<body>
+
+    <div id="cabeçalho">
+        <div id="logo">
+            <h1>Debugando <span class="branco">o futuro</span></h1>
+        </div>
+        <div id="menu">
+            <a href="index.html">Inicio</a>
+            <div class="dropdown-wrapper">
+                <button class="toggle-button" onclick="toggleDropdown()">Outras matérias</button>
+                <div class="dropdown-area" id="dropdown">
+                    <div class="blocos-container">
+                        <a href="materia1.html" class="bloco">
+                            <img src="Imagens/Cooding.png" alt="Tecnologia na Educação">
+                            <p>O uso da tecnologia na educação e no cotidiano</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href="sobremim.html">Quem Faz o Site</a>
+            <a href="todas.html">Todas as Materias</a>
+        </div>
+    </div>
+
+    <div id="area-principal">
+
+        <div id="conteudo-todas-materias">
+
+            <h2 class="titulo-secao">Todas as Matérias</h2>
+
+            <div class="cards-container">
+
+                <a href="materia1.html" class="card-artigo">
+                    <img src="Imagens/ninguem-no-escritorio-com-varios-monitores-no-balcao-de-atendimento-ao-cliente-suporte-de-call-center-para-dar-assistencia-em-telecomunicacoes-helpdesk-vazio-com-recepcao-de-telefonia-cliente.jpg" alt="Tecnologia na Educação" class="card-imagem">
+                    <div class="card-conteudo">
+                        <span class="card-categoria">Tecnologia e Educação</span>
+                        <h3 class="card-titulo">O uso da tecnologia na educação e no cotidiano</h3>
+                        <p class="card-resumo">Uma análise sobre a presença e a eficácia das salas de informática nas escolas brasileiras e o impacto da tecnologia na vida diária.</p>
+                        <span class="card-data">28 de maio de 2025</span>
+                    </div>
+                </a>
+                
+                </div>
+        </div>
+    </div>
+
+    <footer id="rodape">
+        <div class="footer-container">
+            <div class="footer-coluna">
+                <h4>Debugando o Futuro</h4>
+                <p>Notícias e críticas sobre tecnologia, de um jeito que todo mundo entende. Feito por um entusiasta para outros entusiastas.</p>
+            </div>
+            <div class="footer-coluna">
+                <h4>Navegue</h4>
+                <a href="index.html">Início</a>
+                <a href="sobremim.html">Quem Faz o Site</a>
+            </div>
+            <div class="footer-coluna">
+                <h4>Conecte-se</h4>
+                <a href="https://www.linkedin.com/in/paulo-ricardo-9439a9263/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/PauloRicardo-05" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/paulo_o_ricardo_os/" target="_blank">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 Debugando o Futuro. Criado por Paulo Ricardo.</p>
+        </div>
+    </footer>
+
+    <button id="floating-dark-mode-btn" title="Alternar tema">
+        <span class="modo-icon">🌙</span>
+    </button>
+    <script>
+        function toggleDropdown(){document.getElementById("dropdown").style.display=document.getElementById("dropdown").style.display==="block"?"none":"block"}const toggleDarkModeBtn=document.getElementById("floating-dark-mode-btn"),modoIconSpan=toggleDarkModeBtn.querySelector(".modo-icon"),corpo=document.body;function atualizarAparenciaBotaoModoEscuro(){corpo.classList.contains("dark-mode")?(modoIconSpan&&(modoIconSpan.textContent="\u2600\ufe0f"),localStorage.setItem("darkModePreferido","ativado")):(modoIconSpan&&(modoIconSpan.textContent="\ud83c\udf19"),localStorage.setItem("darkModePreferido","desativado"))}toggleDarkModeBtn&&toggleDarkModeBtn.addEventListener("click",function(){corpo.classList.toggle("dark-mode"),atualizarAparenciaBotaoModoEscuro()}),"ativado"===localStorage.getItem("darkModePreferido")&&corpo.classList.add("dark-mode"),toggleDarkModeBtn&&atualizarAparenciaBotaoModoEscuro();
+    </script>
+
+</body>
+</html>

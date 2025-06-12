@@ -589,6 +589,20 @@ body.dark-mode .Postagem p {
 }
 
 /* =======================================================
+   EFEITO STICKY (FLUTUANTE) PARA A BARRA LATERAL
+   ======================================================= */
+
+/* Aplica o efeito à barra lateral em páginas de postagem */
+#lateral {
+    /* A mágica acontece aqui */
+    position: -webkit-sticky; /* Compatibilidade com o navegador Safari */
+    position: sticky;
+    
+    /* Define a que distância do topo a barra vai "grudar" */
+    top: 20px; 
+}
+
+/* =======================================================
    MELHORIAS DE LEITURA PARA A PÁGINA DA MATÉRIA (materia1.html)
    Pode adicionar este bloco no final do seu CSS, antes dos @media.
    ======================================================= */
@@ -646,6 +660,16 @@ body.dark-mode .Postagem p {
 body.dark-mode .Postagem p,
 body.dark-mode .Postagem li {
     color: var(--cor-texto-principal); /* Usando a variável de texto principal do dark mode (cinza claro) */
+}
+
+/* =======================================================
+ESTILO PARA A PÁGINA "TODAS AS MATÉRIAS"
+   ======================================================= */
+
+/* Este container vai ocupar toda a largura da #area-principal,
+   ao contrário da #postagens que tinha uma largura fixa. */
+#conteudo-todas-materias {
+    width: 100%;
 }
 
 /* O subtítulo h3 já usará as variáveis de cor certas do dark mode, então ele se ajusta sozinho! */
