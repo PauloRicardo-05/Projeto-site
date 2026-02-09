@@ -1,3 +1,4 @@
-# Projeto Web-Site
-  🖥 Projeto de criação web para divulgação de matérias diversas
-  e para a prática de HTML (Linguagem de marcação) e Css (Linguagem de estilo)
+# Website Project
+🖥 Web creation project for disseminating various materials
+
+and for practicing HTML (Markup Language) and CSS (Style Language)
